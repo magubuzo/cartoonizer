@@ -90,3 +90,4 @@ document.getElementById('file').addEventListener('change', evt => {
 document.querySelectorAll('#examples img').forEach(
   img => img.addEventListener('click', evt => { APP.source.src = img.src })
 )
+
