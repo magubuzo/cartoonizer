@@ -1,5 +1,6 @@
 tf.setBackend('wasm').then(() => runModel())
 
+// This is a map, it justy holds data that will be used throughout the script
 const APP = {
   model: null, size: 256,
   source: document.getElementById('source'),
@@ -86,6 +87,30 @@ document.getElementById('file').addEventListener('change', evt => {
   })
   evt.target.value = null
 })
+
+  // load the webcam
+  Webcam.set({
+    width: 300,
+    height: 250,
+    image_format: 'jpeg',
+    jpeg_quality: 90,
+  });
+  Webcam.attach("#cameraview")
+  
+
+  
+       document.getElementById("uuid:123").addEventListener("click", function() {
+        Webcam.snap( function(data_uri) {
+          // display results in page
+          image = new Image();
+          image.src = data_uri
+          APP.source.src = data_uri
+        } );
+      });
+   function camTakePicture() {
+     
+
+    }
 
 document.querySelectorAll('#examples img').forEach(
   img => img.addEventListener('click', evt => { APP.source.src = img.src })

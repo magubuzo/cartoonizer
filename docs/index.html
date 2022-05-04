@@ -55,19 +55,30 @@
   </div>
 
 
-   <!-- This is the camera status  -->
   <div class="card-deck m-4 py-2 px-4">
-    <div class="card shadow col-md-6">
+
+
+
+   <!-- This is the camera status  -->
+   <div class="card shadow col-md-6">
+     <div class="card-body px-0 px-sm-2">
+      <button class="btn btn-primary btn-xs px-2" id="uuid:123">
+        BECOME A CARTOON 
+      </button>
+     </div>
+     <div id="cameraview" style="width: fit-content;"></div>
+   </div>
+    <!-- <div class="card shadow col-md-6">
       <div class="card-body px-0 px-sm-2">
         <div class="">
-          <label class="btn btn-primary btn-xs px-2">
-            Cartoonize yourself! <input type="file" id="file" name="file" accept="image/*" hidden>
+        <label id="btn btn-primary btn-xs px-2" >
+            Cartoonize yourself!
           </label>
      
         </div >
         <div id="cameraview"></div>
       </div>
-    </div>
+    </div> --> -->
 
 
   <!-- This is the first card  -->
@@ -113,15 +124,5 @@
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm/dist/tf-backend-wasm.js"></script>
   <script async src="script.js"></script>
-  <script>
-    // load the webcam
-    Webcam.set({
-      width: 300,
-      height: 250,
-      image_format: 'jpeg',
-      jpeg_quality: 90,
-    });
-    Webcam.attach("#cameraview")
-  </script>
 </body>
 </html>
